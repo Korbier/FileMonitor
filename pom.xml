@@ -1,0 +1,36 @@
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.sc.filemonitor</groupId>
+	<artifactId>filemonitor</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	
+	<dependencies>
+		
+		<dependency>
+    		<groupId>org.codehaus.groovy</groupId>
+    		<artifactId>groovy-all</artifactId>
+    		<version>3.0.0-rc-2</version>
+    		<type>pom</type>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.google.flogger/flogger -->
+		<dependency>
+		    <groupId>com.google.flogger</groupId>
+		    <artifactId>flogger</artifactId>
+		    <version>0.4</version>
+		</dependency>		
+	    
+	    <dependency>
+	        <groupId>com.google.flogger</groupId>
+	        <artifactId>flogger-system-backend</artifactId>
+	        <version>0.4</version>
+	        <scope>runtime</scope>
+	    </dependency>
+	    		
+	</dependencies>
+	
+</project>
