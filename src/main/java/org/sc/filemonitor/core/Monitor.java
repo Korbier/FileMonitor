@@ -1,8 +1,7 @@
 package org.sc.filemonitor.core;
 
-import java.util.UUID;
-
 import org.sc.filemonitor.configuration.Configuration;
+import org.sc.filemonitor.core.script.ScriptManager;
 
 import com.google.common.flogger.FluentLogger;
 
@@ -14,10 +13,10 @@ public class Monitor {
 	private MonitorThread thread        = null;
 	private String        id            = null;
 	
-	public Monitor( Configuration configuration ) {
+	public Monitor( String id, Configuration configuration, ScriptManager scriptManager ) {
 		this.configuration = configuration;
-		this.thread        = new MonitorThread( this.configuration );
-		this.id            = UUID.randomUUID().toString();
+		this.id            = id;
+		this.thread        = new MonitorThread( this, scriptManager );
 	}
 	
 	public String getId() {
@@ -42,7 +41,6 @@ public class Monitor {
 	}
 	
 	public void stop() {
-		getLogger().atInfo().log( "[%s] Stopping monitor on path %s %s", getId(), getConfiguration().getPath(), getConfiguration().getEvents() );
 		this.thread.stop();
 	}
 	
